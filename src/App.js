@@ -1,4 +1,5 @@
 import { Component } from "react/cjs/react.production.min";
+import Container from "./components/Container/Container";
 import ContactsForm from "./components/ContactForm/ContactForm";
 import Filter from "./components/Filter/Filter";
 import ContactList from "./components/ContactList/ContactList";
@@ -46,15 +47,14 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <h1>Phonebook</h1>
+      <Container title="Phonebook">
         <ContactsForm onSubmit={this.addContact} />
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <ContactList
           contacts={this.findByName()}
           deleteContact={this.deleteContact}
         />
-      </>
+      </Container>
     );
   }
 }

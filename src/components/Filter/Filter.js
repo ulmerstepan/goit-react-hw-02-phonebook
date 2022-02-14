@@ -1,8 +1,11 @@
+import { LabelFilter, InputFilter } from "./Filter.styled";
+import PropTypes from "prop-types";
+
 export default function Filter({ value, onChange }) {
   return (
-    <label>
+    <LabelFilter>
       Find contacts by name
-      <input
+      <InputFilter
         type="text"
         name="filter"
         value={value}
@@ -11,6 +14,11 @@ export default function Filter({ value, onChange }) {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-    </label>
+    </LabelFilter>
   );
 }
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
